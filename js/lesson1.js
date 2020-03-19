@@ -196,3 +196,15 @@ c=3; // высота
 
 result = 2*((a*b)+(b*c)+(a*c));
 console.log(result);
+
+// Преобразовывать строки в число
+age = "12 65 лет 99";
+wight = "1.6em 9em";
+age = parseInt(age); //  читает из строчки число до первого не числового символа
+console.log(age);
+
+// Читает из строчки число сплавующей точкой 
+wight= parseFloat(wight);
+console.log(wight);
+
+
