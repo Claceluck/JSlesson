@@ -87,7 +87,7 @@ let numbers = [1, 5, 3, 4, 3, 8, 2, 4, 0];
 console.log(numbers);
 
 for (let i = 0; i < numbers.length; i++) {
-    for (let j = 0; j < numbers.length; j++) {
+    for (let j = 0; j < numbers.length; j++) { // let j = i + 1;
         if (numbers[i] + numbers[j] === 7 ) {
             console.log(" Пара чисел сумма которых равна 7: " + numbers[i] + "(индекс)" + [i] + " и " + numbers[j] + "(индекс)" + [j] );
         break;
