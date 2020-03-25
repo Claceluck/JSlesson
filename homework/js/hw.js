@@ -1,6 +1,6 @@
 // Задача 1 if else
 
-let sum = 3378;
+let sum = 3678;
 
 if ( sum > 0 && sum < 1000) {
     console.log ("Скидка не предусмотрена");
@@ -14,7 +14,7 @@ if ( sum > 0 && sum < 1000) {
 
 // Задача switch 2 
 
-let mount = "август";
+let mount = "октябрь";
 
 switch (mount) {
     case "декабрь":
