@@ -73,11 +73,69 @@ let messages = [
     }
 ];
 
-let codeP = prompt('введите код сообщения');
+// Задача на перебор обьектов в массиве, выполняеться с помощью перебора массива. по примеру ниже. 
 
-for (let i = 0; i < messages.length; i++) {
-    if (codeP < messages[i].code) {
-        console.log (messages[i].text);
+// let codeP = prompt('введите код сообщения');
+
+// for (let i = 0; i < messages.length; i++) {
+//     if (codeP < messages[i].code) {
+//         console.log (messages[i].text);
+//     }
+// }
+
+for(let i=0; i<userData.books.length;i++){ 
+    if (userData.books[i].pageCount >500) {
+        console.log(userData.books[i].title) 
     }
 }
 
+for (let elem of userData.books) { 
+    if (elem.pageCount>500) { 
+        console.log (elem.title);
+    }
+}
+
+
+// деструкторизация объекта
+
+phpBook = {
+    titile: 'Php Book',
+    avtor: 'Php Junior',
+    pageCount: 725
+};
+
+let {author: authorVar, pic: picVar = null, ...other} = phpBook;
+console.log(authorVar);
+console.log(picVar);
+console.log(other);
+
+
+let user = {
+    login: 'qwe',
+    pwd: '123',
+    name: 'Евгений'
+};
+
+let { login: Login, pwd: pass, ...other2} = user;
+console.log (other2);
+
+// деструкторизация массива
+let colors = ["red", "orange" , "yellow"];
+
+let [redColor, orangeColors] = colors;
+console.log(redColor);
+console.log(orangeColors);
+
+let [color1, color2, color3, color4 = 'green', color5] = colors;
+console.log(color1, color2, color3, color4, color5);
+
+
+phpBook = {
+    titile: 'Php Book',
+    avtor: 'Php Junior',
+    pageCount: 725
+};
+// TODO:
+for (let [key, val] of Object.entries(phpBook)) {
+    console.log (`key = ${key}, val =${val}`);
+}
