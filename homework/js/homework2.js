@@ -62,10 +62,21 @@ console.log(maxElem);
 // Не забывайте про метод trim и тд
 
 
-let text = prompt("Введите ваш город:");
-text.trim().indexOf("Спб");
-console.log(text.trim().indexOf("Спб"));
+let text = prompt("Введитe строку");
+let sub_text = prompt("Введите подстроку");
+let i = 0;
+let j;
+let k=0;
+console.log(text);
+console.log(sub_text);
 
+while (true) {
+    j = text.indexOf(sub_text,i);
+    if(j === -1) break;
+    k++;
+    i = j+1;
+}
+console.log('Найдено вхождений ',k)
 
 // 3 Задача на строки
 //  Преобразуйте первую букву строки в верхний регистр. Строку вводит пользователь 
