@@ -88,3 +88,119 @@ function getNumber (y, x){
 }
 getNumber(x, y);
 
+// функция принимает на вход массив целых чисел, возвразает сумму
+
+function arrSum (arr){ 
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++){
+        sum += arr[i]; 
+    } return sum; 
+}
+
+let arr = [3, 7, 9, 0];
+arrSum(arr);
+
+function changeStr(str) {
+    str += "продолжение строки";
+}
+function changeArr(arr) {
+    for (let i = 0; i < arr.length; i++){
+        arr[i] += 3;
+    }
+}
+
+let str = "Строка";
+arr = [3, 7, 9, 0];
+
+changeStr(str);
+changeArr(arr);
+
+console.log(str);
+console.log(arr);
+
+let u = 4;
+let h = u;
+
+u = 89;
+
+console.log(u);
+console.log(h);
+
+let someArr = [45, 78, 90];
+let otherArr = someArr;
+
+someArr[1] = 20000;
+
+console.log(someArr);
+console.log(otherArr);
+
+// переменное количество аргументов
+// оператор ... spread собирает элементы в массив
+
+function sumNums(...nums) {
+ console.log("nums", nums);
+ let sum = 0;
+ for (let num of nums) {
+     sum += num;
+ }
+ console.log ("sum: ", sum);
+ return;
+}
+
+sumNums (34, 78);
+sumNums(34, 56, 56, 76, 74, 43, 3);
+
+function threeSum(x1, x2, x3) {
+    return  x1 + x2 + x3;
+}
+arr = [4, 78, 0, -10];
+let resArr = threeSum(...arr);
+console.log("resArr " + resArr);
+
+function printArgs() {
+    //все аргументы собираються в псевдомассив arguments
+    for( let arg of arguments ) {
+        console.log(arg);
+    }
+}
+
+printArgs(3, null, [2, 5], 'String');
+
+function printNums (num) {
+    let i = num;
+    while ( i >= 0){
+        console.log(i);
+        i--;
+    }
+}
+printNums(3);
+
+function printNums2(num){
+    if (num >=0) {
+        console.log(num);
+        printNums2(num -1); // рекурсивный вызов функции- вызов функции внутри функции но с другоми аргументами 
+    }
+}
+printNums2(3);
+
+// замыкание 
+function multi (n) {
+    let x = n;
+    return function (m) {
+        return x * m;
+    }
+}
+
+let multiSix = multi(6); // значение multiSix тоже функция
+result = multiSix(5);
+console.log(result);
+
+result = multiSix(10);
+console.log(result);
+
+
+// самовызывающая функция 
+(function () {
+    console.log("Самовызывающая функция");
+    // тело функции
+}());
