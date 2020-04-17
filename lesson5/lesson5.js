@@ -150,33 +150,30 @@ res = arr.every(lessZero);
 console.log("every() res = " + res); // false 
 
 
-//TODO: каждый элемент вложенного массива больше 0?
-//TODO: каждый элемент вложенного массива увеличить на 2
+// TODO:: каждый элемент вложенного массива больше 0
+// TODO:: каждый элемент вложенного массива увеличить на 2
+
 arr = [
     [1, 3, 4],
     [3, 7, 9],
     [-90, 12, -12]
 ];
 
-lessZero = (elem, index, array) => {
-    console.log(elem);
-    return elem < 0;
-}
-res = arr.every(lessZero);
-console.log("every() res = " + res); // false 
-
-// возраст всех пользователей больше или равен 18
+// TODO:: возраст всех пользователей больше или равен 18
 arr = [
     {
-        name: 'qwe',
+        name: "qwe",
         age: 19
     },
     {
-
+        name: "qwe",
+        age: 45
+    },
+    {
+        name: "qwe",
+        age: 16
     }
-]
-//TODO: Продолжение на githube
-
+];
 
 
 //

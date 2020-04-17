@@ -58,3 +58,18 @@ let books = [
     { author: 'Пушкин', title: 'Руслан и Людмила'},
     { author: 'Лермонтов', title: 'И скучно, и грустно'},
 ];
+
+let author = prompt('Фамилия автора');
+author=author.trim();
+let searhBook = [];
+i=0;
+let j=false;
+for(let el of books){
+    if(el.author === author){
+        searhBook[i]=el;
+        i++;
+        j=true;
+    }
+}
+if(j){console.log(searhBook);}
+else console.log('Книг данного автора нет..');
