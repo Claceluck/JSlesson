@@ -25,6 +25,39 @@ let articles = [
     }
 ];
 
+//  генерация таблицы со статьями
+
+function generateTable (articlesData, articlesElem) {
+    for ( let item in articlesData) {
+
+        let table = document.createElement("div"); // создаю div
+        table.classList.add("table"); // добавили класс table
+
+        let id = document.createElement("h2"); 
+        id.innerText = articlesData[item].id;
+
+        let title = document.createElement("h3");
+        title.innerText = articlesData[item].title;
+
+        let text = document.createElement("p");
+        text.innerText = articlesData[item].text;
+
+        let author = document.createElement("h4");
+        author.innerText = articlesData[item].author;
+
+        table.append(id, title, text, author);
+
+        articlesElem.append(table);
+    }
+}
+
+let section = document.querySelector(".articles");
+generateTable(articles, section);
+
+
+
+
+
 let goods = [
     {
         title: "Пианино",
@@ -53,6 +86,31 @@ let goods = [
     }
 ];
 
-// примеры вызова функции:
-generateTable(articles); // генерация таблицы со статьями
-generateTable(goods); // генерация таблицы с товарами
+// генерация таблицы с товарами
+
+function generateGoods (goodsData, goodsElem) {
+    for ( let item in goodsData) {
+
+        let table = document.createElement("div"); // создаю div
+        table.classList.add("table"); // добавили класс table
+
+        let title = document.createElement("h2");
+        title.innerText = goodsData[item].title;
+
+        let price = document.createElement("p");
+        price.innerText = `Цена: ${goodsData[item].price}`;
+
+        let count = document.createElement("h4");
+        count.innerText = goodsData[item].count;
+
+        table.append(title, price, count);
+
+        goodsElem.append(table);
+    }
+}
+
+let span = document.querySelector(".goodsTable");
+generateGoods(goods, span);
+
+//  Не особо похоже на таблицы... но я исправлю) 
+// пока просто по примеру делал.

@@ -15,6 +15,10 @@ img {
     justify-content: space-around;
 }
 
+.articles {
+    display: flex;
+    justify-content: space-around;
+}
 .card { 
     /* стили для каждой карточки с товаром */
     border: 1px solid lightgray;
