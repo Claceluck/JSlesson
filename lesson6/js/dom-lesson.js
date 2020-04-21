@@ -115,23 +115,23 @@ for (let i = 0; i < 5; i++) {
 
 // document.body.prepend(div); // элемент div , который был создан ранее добавили первым в body
 
-// // работа с таблицами
-// let tableArea = document.getElementById("users-block");
-// let table = document.createElement("table");
-// table.setAttribute("border", 1);
+// работа с таблицами
+let tableArea = document.getElementById("users-block");
+let table = document.createElement("table");
+table.setAttribute("border", 1);
 
-// // заголовок
-// let caption = table.createCaption();
-// caption.innerText = "Заголовок таблицы";
+// заголовок
+let caption = table.createCaption();
+caption.innerText = "Заголовок таблицы";
 
-// // ряд
-// let row = table.insertRow(0);
+// ряд
+let row = table.insertRow(0);
 
-// // ячейки
-// let cell1 = row.insertCell(0);
-// let cell2 = row.insertCell(1);
+// ячейки
+let cell1 = row.insertCell(0);
+let cell2 = row.insertCell(1);
 
-// cell1.innerText = "Cell 1";
-// cell2.innerText = "Cell 2";
+cell1.innerText = "Cell 1";
+cell2.innerText = "Cell 2";
 
-// tableArea.append(table);
+tableArea.append(table);
