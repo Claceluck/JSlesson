@@ -13,3 +13,26 @@
 для 3й ячейки значение атрибута prise="car"
 */
 
+let game = {
+    cat: "Кот",
+    book: "Книга",
+    car: "Машина"
+};
+
+function generateField(n) {
+    let price = ['cat','book', 'car']; // массив price
+    let a;
+    let b;
+    let c;
+    // создали ячейки a, b, c
+    do { // 
+        a = Math.floor(Math.random() * (n * n));
+        b = Math.floor(Math.random() * (n * n));
+        c = Math.floor(Math.random() * (n * n));
+    } while (a === b  || b === c || c === a);
+    console.log (a,b,c);
+
+
+
+
+generateField(15)
