@@ -20,15 +20,22 @@ console.log(sumNum(n));
 let text = 'Ничего про спам не слышно, что такое вообще СпАм, и кому придёт в голову искать СПАМ.. спам, СПАМ, спам! Казино ВУЛКАН!';
 let spam = 'спам';
 
-function spamTest(text, spamWord) {
+function spamTest(text, ...spamWord) {
     let lowerText = text.toLowerCase();
-    console.log(lowerText);
-    if (lowerText.includes('спам') && lowerText.includes('Казино ВУЛКАН') ) {
-        return console.log('Замечен спам 5 уровень!');
-    }
-    if ( lowerText.includes('Казино ВУЛКАН')  || lowerText.includes('спам') ) {
-        return console.log('Замечен спам 1 уровень!')
-    }
+    let textArr = lowerText.split(' ');
+    let counter = 0;
+    for (let i = 0; i < textArr.length; i++) {
+        spamWord.forEach(function(element){
+            if (element === textArr[i]) {
+                 counter++; 
+                } 
+    });
+    // if (lowerText.includes('спам') && lowerText.includes('Казино ВУЛКАН') ) {
+    //     return console.log('Замечен спам 5 уровень!');
+    // }
+    // if ( lowerText.includes('Казино ВУЛКАН')  || lowerText.includes('спам') ) {
+    //     return console.log('Замечен спам 1 уровень!')
+    // }
 }
 
 spamTest(text, spam);
@@ -41,12 +48,13 @@ let count = 25;
 
 function endingWord(count) {
     if((Math.floor(count%10) === 0 || Math.floor(count%10) >=5 && Math.floor(count%10) <=9 )){
-        console.log(`${count} товаров`);
+        console.log(`${count} товаров`)};
     }
+    if (count % 100 >= 10 && count % 100 <= 20) {
+        console.log(`${count}` + " товаров")}
     else if (Math.floor(count%10) === 1) console.log(`${count} товар`);
     else console.log(`${count} товарa`);
 }
-console.log(count%10);
 endingWord(count);
 
 
@@ -118,23 +126,30 @@ console.log(favorLang(users, "php"));
 
 // не совсем разобрался в этом задании.. хм
 
-function  sort_arr(arr) {
-    let sort_city = [];
-    let new_arr = [];
-    for(let elem of arr){
-        sort_city.push(elem.city);
-    }
-    sort_city.sort();
-    for(let i of sort_city){
-        for(let j of arr){
-            if(i === j.city) {
-                new_arr.push(j);
-                break;
-            }
-        }
-    }
-    return new_arr;
+// function  sort_arr(arr) {
+//     let sort_city = [];
+//     let new_arr = [];
+//     for(let elem of arr){
+//         sort_city.push(elem.city);
+//     }
+//     sort_city.sort();
+//     for(let i of sort_city){
+//         for(let j of arr){
+//             if(i === j.city) {
+//                 new_arr.push(j);
+//                 break;
+//             }
+//         }
+//     }
+//     return new_arr;
 
+// }
+// console.log(sort_arr(users));
+
+function sortArr (first, second) {
+
+    return first.city.localeCompare(second.city);
 }
-console.log(sort_arr(users));
+someArr.sort(sortArr);
+console.log(someArr);
 
