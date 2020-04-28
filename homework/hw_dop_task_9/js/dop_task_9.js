@@ -17,7 +17,7 @@ for(let elem of books) {
     let author = document.createElement('p');
     author.innerText = `Автор: ${elem.author}`;
 
-    let form = document.createElement('form'); // создаю форму
+    let form = document.createElement('form'); 
     form.setAttribute('action', '#');
     form.setAttribute('method', 'post');
     form.setAttribute('name','count');
@@ -25,7 +25,7 @@ for(let elem of books) {
     let countForm = document.createElement('input');
     countForm.setAttribute('type', 'number');
     countForm.setAttribute('placeholder', 'Введите колличество');
-    countForm.setAttribute( 'value',' ');
+    countForm.setAttribute( 'value','0');
     
 
     let minus = document.createElement('input');
@@ -41,7 +41,7 @@ for(let elem of books) {
     function countPlus(countInd, event) {
        console.log('ааа на меня нажали!');
        countInd = countForm.value;
-       console.log(countForm.value);
+       console.log(countInd);
        if (countForm.value > 0) {
         countInd++;
        }
