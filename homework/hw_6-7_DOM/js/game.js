@@ -16,7 +16,7 @@
 let genAreaGame = document.getElementById("genGameArea");
 
 genAreaGame.addEventListener("click", generateField);
-
+ 
 let prise = {
   cat: "Кот",
   book: "Книга",
