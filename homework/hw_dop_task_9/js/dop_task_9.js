@@ -93,7 +93,7 @@ function infoCats(objFromJson){
         console.log(elem);
 
         let divCat = document.createElement("div");
-        divCat.classList.add("grid_1");
+        divCat.classList.add("grid");
         divCat.style.cssText = 
         `
         border: 1px solid orange;
@@ -110,7 +110,7 @@ function infoCats(objFromJson){
         documents.innerText = elem.additional_info.passport? ' Паспорт: Да' : ' Паспорт: Нет';
         
         let imgDiv = document.createElement("div");
-        imgDiv.classList.add("grid_1");
+        imgDiv.classList.add("grid");
         let img = document.createElement("img");
         img.setAttribute('src', 'https://picsum.photos/180');
         img.classList.add("img");
