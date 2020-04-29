@@ -14,7 +14,7 @@ constructor(name){
 
 set attack(attackValue) {
     if ( attackValue < 5) {
-    throw new Error ('Атака не может быть меньше 5')
+    throw new Error ('Атака не может быть меньше 5');
 }
     this._attack = attackValue;
 }

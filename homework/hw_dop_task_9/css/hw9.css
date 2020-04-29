@@ -1,3 +1,47 @@
-section,h2,h3,p {
+#booksTable {
     border: 1px solid green;
+}
+
+/* #infoCats {
+    border: 1px solid orange;
+} */
+
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1em;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+}
+.img {
+    border-radius: 8px;
+}
+
+
+body {
+    display: grid;
+    grid-template-areas: 
+    "header header header"
+    "vertical_nav main info_block"
+    "footer footer footer";
+    grid-template-columns: 1fr minmax(500px, 1100px) 1fr;
+    grid-template-rows: 10em auto 1fr;
+}
+
+header {
+    grid-area: header;
+}
+aside {
+    grid-area: aside;
+    grid-area: info_block;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
 }

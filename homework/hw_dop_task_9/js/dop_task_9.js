@@ -23,7 +23,7 @@ for(let elem of books) {
     form.setAttribute('name','count');
 
     let countForm = document.createElement('input');
-    countForm.setAttribute('type', 'number');
+    countForm.setAttribute('type', 'text');
     countForm.setAttribute('placeholder', 'Введите колличество');
     countForm.setAttribute( 'value','0');
     
@@ -37,22 +37,14 @@ for(let elem of books) {
     plus.setAttribute('value', '+');
     plus.addEventListener('click', countPlus);
 
-    let countInd = 0;
-    function countPlus(countInd, event) {
-       console.log('ааа на меня нажали!');
-       countInd = countForm.value;
-       console.log(countInd);
-       if (countForm.value > 0) {
-        countInd++;
-       }
-       
-    }
-    
-    let maxCount = document.createElement('p');
-    maxCount.innerText= `Всего на складе ${elem.count}`;
 
-    form.append(minus,countForm, plus);
-    booksTable.append(title, author, form, maxCount);
+    function countPlus(book, event) { // пока не получилось сделать увеличение на 1...
+        console.log('ааа на меня нажали')
+      if(countForm.value >= 0){
+        countForm.value.innerText + 1;
+      }
+
+    }
 
     if(elem.count === 0) {
         minus.setAttribute('disabled','')
@@ -61,8 +53,15 @@ for(let elem of books) {
     if(countForm.value > elem.count) {
         countForm.setAttribute('value', 'disabled' )
     }
-}
 
+    let maxCount = document.createElement('p');
+    maxCount.setAttribute("id", "maxCount");
+    maxCount.innerText= `Всего на складе ${elem.count}`;
+
+    form.append(minus,countForm, plus);
+    booksTable.append(title, author, form, maxCount);
+
+}
 
 // вывести информацию о товаре
 // Название
@@ -84,3 +83,43 @@ let objFromJson = JSON.parse(jsonFromServer); // вывод информации
 //                Цвет:  цвет кошки
 //                Документы: да / нет
 //                Прививик: да / нет
+
+console.log(objFromJson);
+
+function infoCats(objFromJson){
+    let infoCats = document.getElementById("infoCats");
+    infoCats.classList.add("grid");
+    for(let elem of objFromJson){
+        console.log(elem);
+
+        let divCat = document.createElement("div");
+        divCat.classList.add("grid_1");
+        divCat.style.cssText = 
+        `
+        border: 1px solid orange;
+        border-radius: 8px;
+        `;
+        let name = document.createElement("h3");
+        name.innerText = `Имя ${elem.name} | Возраст ${elem.age}`
+        let color = document.createElement("h4");
+        color.innerText = `Цвет: ${elem.color}`;
+
+        let documents = document.createElement('p');
+        let vaccination = document.createElement('p');
+        vaccination.innerText = elem.additional_info.vaccinations?' Прививки: Да' : ' Прививки: Нет';
+        documents.innerText = elem.additional_info.passport? ' Паспорт: Да' : ' Паспорт: Нет';
+        
+        let imgDiv = document.createElement("div");
+        imgDiv.classList.add("grid_1");
+        let img = document.createElement("img");
+        img.setAttribute('src', 'https://picsum.photos/180');
+        img.classList.add("img");
+        
+        imgDiv.append(img);
+
+    
+        divCat.append(name, color, documents, vaccination);
+        infoCats.append(divCat, imgDiv);
+    }
+}
+infoCats(objFromJson);
