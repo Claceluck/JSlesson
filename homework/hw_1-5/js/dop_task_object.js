@@ -6,6 +6,20 @@
 На основе объекта goods создать новый объект с товарами,
 цены которых лежат в диапазоне от значения from до значения to*/
 
+let from = prompt(`Введите число ОТ, для выхода наберите "exit"`);
+let to = prompt(`Введите число ДО`);
+
+while ((isNaN(Number(from)) && from !== 'exit')){
+        console.log(`${from} не является числом!`)
+        from = prompt(`${from} не является числом! Введите число ОТ, для выхода наберите "exit"`);
+}
+while ((isNaN(Number(to)) && to !== 'exit')){
+    console.log(`${to} не является числом!`)
+    from = prompt(`${to} не является числом! Введите число ДО, для выхода наберите "exit"`);
+}
+
+
+
 /*
 Задача 2
 Даны 2 переменные title и countToCart (значения переменных вводит пользователь через prompt).
@@ -49,27 +63,30 @@ let goods = {
 На основе массива books создать новый массив, в который войдут все книги указанного автора,
 если такого автора нет, вывести информацию в консоль
 */
-let books = [
-    { author: 'Пушкин', title: 'Пир во время чумы'},
-    { author: 'Толстой', title: 'Война и мир'},
-    { author: 'Лермонтов', title: 'Тамань'},
-    { author: 'Гончаров', title: 'Обломов'},
-    { author: 'Лермонтов', title: 'Герой Нашего Времени'},
-    { author: 'Пушкин', title: 'Руслан и Людмила'},
-    { author: 'Лермонтов', title: 'И скучно, и грустно'},
-];
 
-let author = prompt('Фамилия автора');
-author=author.trim();
-let searhBook = [];
-i=0;
-let j=false;
-for(let el of books){
-    if(el.author === author){
-        searhBook[i]=el;
-        i++;
-        j=true;
-    }
-}
-if(j){console.log(searhBook);}
-else console.log('Книг данного автора нет..');
+
+
+// let books = [
+//     { author: 'Пушкин', title: 'Пир во время чумы'},
+//     { author: 'Толстой', title: 'Война и мир'},
+//     { author: 'Лермонтов', title: 'Тамань'},
+//     { author: 'Гончаров', title: 'Обломов'},
+//     { author: 'Лермонтов', title: 'Герой Нашего Времени'},
+//     { author: 'Пушкин', title: 'Руслан и Людмила'},
+//     { author: 'Лермонтов', title: 'И скучно, и грустно'},
+// ];
+
+// let author = prompt('Фамилия автора');
+// author=author.trim();
+// let searhBook = [];
+// i=0;
+// let j=false;
+// for(let el of books){
+//     if(el.author === author){
+//         searhBook[i]=el;
+//         i++;
+//         j=true;
+//     }
+// }
+// if(j){console.log(searhBook);}
+// else console.log('Книг данного автора нет..');
