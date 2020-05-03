@@ -37,26 +37,26 @@ let goods = {
 На основе объекта goods создать новый объект с товарами,
 цены которых лежат в диапазоне от значения from до значения to*/
 
-// let from = prompt(`Введите число ОТ, для выхода наберите "exit"`);
-// let to = prompt(`Введите число ДО`);
+let from = prompt(`Введите число ОТ, для выхода наберите "exit"`);
+let to = prompt(`Введите число ДО`);
 
-// while ((isNaN(Number(from)) && from !== 'exit')){
-//         console.log(`${from} не является числом!`)
-//         from = prompt(`${from} не является числом! Введите число ОТ, для выхода наберите "exit"`);
-// }
-// while ((isNaN(Number(to)) && to !== 'exit')){
-//     console.log(`${to} не является числом!`)
-//     to = prompt(`${to} не является числом! Введите число ДО, для выхода наберите "exit"`);
-// }
+while ((isNaN(Number(from)) && from !== 'exit')){
+        console.log(`${from} не является числом!`)
+        from = prompt(`${from} не является числом! Введите число ОТ, для выхода наберите "exit"`);
+}
+while ((isNaN(Number(to)) && to !== 'exit')){
+    console.log(`${to} не является числом!`)
+    to = prompt(`${to} не является числом! Введите число ДО, для выхода наберите "exit"`);
+}
 
-// let sortGoods = {};
+let sortGoods = {};
 
-// for (let elem in goods){
-//     if (goods[elem].price>=from && goods[elem].price<=to){
-//         sortGoods[elem]=goods[elem];
-//     }
-// }
-// console.log(sortGoods);
+for (let elem in goods){
+    if (goods[elem].price>=from && goods[elem].price<=to){
+        sortGoods[elem]=goods[elem];
+    }
+}
+console.log(sortGoods);
 
 
 
@@ -70,20 +70,20 @@ let goods = {
 если не позволяет, то вывести информацию об этом в консоль
  */
 
-// let searchTitle = prompt("Введите название товара, который хотите найти");
-// searchTitle = searchTitle.trim();
-// let countToCart = prompt("Сколько товара вы хотите заказать? Введите значения в числовом виде!");
+let searchTitle = prompt("Введите название товара, который хотите найти");
+searchTitle = searchTitle.trim();
+let countToCart = prompt("Сколько товара вы хотите заказать? Введите значения в числовом виде!");
 
-// for (const elem in goods) {
-//     if (searchTitle === goods[elem].title) {
-//     if (goods[elem].count >= countToCart) {
-//          goods[elem].count -= countToCart } else {
-//              console.log("На складе нет столько товара");
-//             };
-//     };
-// }
+for (const elem in goods) {
+    if (searchTitle === goods[elem].title) {
+    if (goods[elem].count >= countToCart) {
+         goods[elem].count -= countToCart } else {
+             console.log("На складе нет столько товара");
+            };
+    };
+}
 
-// console.log(goods);
+console.log(goods);
 
 
 
