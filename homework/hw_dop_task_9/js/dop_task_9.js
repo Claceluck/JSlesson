@@ -40,8 +40,9 @@ for(let elem of books) {
 
     function countPlus(book, event) { // пока не получилось сделать увеличение на 1...
         console.log('ааа на меня нажали')
+        console.log(countForm.value);
       if(countForm.value >= 0){
-        countForm.value.innerText + 1;
+        countForm.value.innerText = +countForm.value.innerText + 1
       }
 
     }
