@@ -1,1 +1,6 @@
- 
+body {
+    display: grid;
+}
+div {
+    border-radius: 1px solid green ;
+}
