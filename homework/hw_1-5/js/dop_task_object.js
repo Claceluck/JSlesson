@@ -37,26 +37,26 @@ let goods = {
 На основе объекта goods создать новый объект с товарами,
 цены которых лежат в диапазоне от значения from до значения to*/
 
-let from = prompt(`Введите число ОТ, для выхода наберите "exit"`);
-let to = prompt(`Введите число ДО`);
+// let from = prompt(`Введите число ОТ, для выхода наберите "exit"`);
+// let to = prompt(`Введите число ДО`);
 
-while ((isNaN(Number(from)) && from !== 'exit')){
-        console.log(`${from} не является числом!`)
-        from = prompt(`${from} не является числом! Введите число ОТ, для выхода наберите "exit"`);
-}
-while ((isNaN(Number(to)) && to !== 'exit')){
-    console.log(`${to} не является числом!`)
-    to = prompt(`${to} не является числом! Введите число ДО, для выхода наберите "exit"`);
-}
+// while ((isNaN(Number(from)) && from !== 'exit')){
+//         console.log(`${from} не является числом!`)
+//         from = prompt(`${from} не является числом! Введите число ОТ, для выхода наберите "exit"`);
+// }
+// while ((isNaN(Number(to)) && to !== 'exit')){
+//     console.log(`${to} не является числом!`)
+//     to = prompt(`${to} не является числом! Введите число ДО, для выхода наберите "exit"`);
+// }
 
-let sortGoods = {};
+// let sortGoods = {};
 
-for (let elem in goods){
-    if (goods[elem].price>=from && goods[elem].price<=to){
-        sortGoods[elem]=goods[elem];
-    }
-}
-console.log(sortGoods);
+// for (let elem in goods){
+//     if (goods[elem].price>=from && goods[elem].price<=to){
+//         sortGoods[elem]=goods[elem];
+//     }
+// }
+// console.log(sortGoods);
 
 
 
@@ -70,20 +70,20 @@ console.log(sortGoods);
 если не позволяет, то вывести информацию об этом в консоль
  */
 
-let searchTitle = prompt("Введите название товара, который хотите найти");
-searchTitle = searchTitle.trim();
-let countToCart = prompt("Сколько товара вы хотите заказать? Введите значения в числовом виде!");
+// let searchTitle = prompt("Введите название товара, который хотите найти");
+// searchTitle = searchTitle.trim();
+// let countToCart = prompt("Сколько товара вы хотите заказать? Введите значения в числовом виде!");
 
-for (const elem in goods) {
-    if (searchTitle === goods[elem].title) {
-    if (goods[elem].count >= countToCart) {
-         goods[elem].count -= countToCart } else {
-             console.log("На складе нет столько товара");
-            };
-    };
-}
+// for (const elem in goods) {
+//     if (searchTitle === goods[elem].title) {
+//     if (goods[elem].count >= countToCart) {
+//          goods[elem].count -= countToCart } else {
+//              console.log("На складе нет столько товара");
+//             };
+//     };
+// }
 
-console.log(goods);
+// console.log(goods);
 
 
 
@@ -93,7 +93,12 @@ console.log(goods);
 На основе массива books создать новый массив, в который войдут все книги указанного автора,
 если такого автора нет, вывести информацию в консоль
 */
-
+/*
+let i=0; и let j=false; - лишние переменные,
+добавлять в массив можно используя метод push(),
+а проверять, были ли найдены книги по размеру массива 
+if(searhBook.length > 0){console.log(searhBook);}
+*/
 
 
 let books = [
@@ -107,16 +112,14 @@ let books = [
 ];
 
 let author = prompt('Фамилия автора');
-author=author.trim();
+author=author.toUpperCase();
+author= author.trim();
 let searhBook = [];
-i=0;
-let j=false;
+
 for(let el of books){
-    if(el.author === author){
-        searhBook[i]=el;
-        i++;
-        j=true;
+    if(el.author.toUpperCase() === author){
+        searhBook.push(el.title);
     }
 }
-if(j){console.log(searhBook);}
+if(searhBook.length > 0){console.log(searhBook);}
 else console.log('Книг данного автора нет..');
