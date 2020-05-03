@@ -1,6 +1,47 @@
 body {
     display: grid;
+    grid-template-areas: 
+    "header header header"
+    "vertical_nav main info_block"
+    "footer footer footer";
+    grid-template-columns: 1fr minmax(500px, 1100px) 1fr;
+    grid-template-rows: 10em auto 1fr;
 }
-div {
-    border-radius: 1px solid green ;
+
+header {
+    grid-area: header;
 }
+aside {
+    grid-area: aside;
+    grid-area: info_block;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.gameCell{
+    background: greenyellow;
+    border-radius: 1em;
+    margin: 0.5em;
+    padding: 3em;
+    width: 6em;
+    text-align: center;
+}
+.gameCell:hover {
+    cursor: help;
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.open{
+    background: lightblue;
+}
+
