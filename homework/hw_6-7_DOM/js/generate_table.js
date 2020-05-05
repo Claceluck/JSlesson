@@ -78,8 +78,6 @@ generateTable(goods);
 generateTable(articles);
 
 
-    
-
 
 
 

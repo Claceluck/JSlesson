@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Валидация формы</title>
+    <!-- файл валидатора можно подключить в хеад, если в инструкции не написано что нельзя -->
+    <script src="/Validator_lesson12/js/validator.js"></script>
+</head>
+<body>
+
+<form name="auth-form">
+    <div>
+        <input data-validate="login" name="login" type="text">
+        <span></span>
+    </div>
+    <div>
+        <input data-validate="password" name="password" type="password">
+        <span></span>
+    </div>
+        <input type="submit" value="Отправить">
+</form>
+
+<script src="/Validator_lesson12/js/index.js"></script>
+
+</body>
+
+</html>
