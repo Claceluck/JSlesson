@@ -14,7 +14,7 @@ let rules = {
 
 };
 
-Validator.setForm(document.forms["auth-form"], rules)
+Validator.setForm(document.forms["auth-form"], rules) 
     setSuccess(()=>{
         console.log("Данные можно отпрвлять на сервер");
     })
